@@ -1,6 +1,7 @@
 var User = require("../models/users");
 const bcrypt = require("bcryptjs");
 const { body, validationResult } = require("express-validator");
+require("dotenv").config();
 
 // Handle User create on GET.
 exports.user_create_get = (req, res, next) => {
@@ -39,6 +40,7 @@ exports.user_create_post = [
         var user = new User({
           firstName: req.body.firstName,
           lastName: req.body.lastName,
+          member: false,
           username: req.body.username,
           email: req.body.email,
           password: hashedPassword,
@@ -66,5 +68,52 @@ exports.user_create_post = [
         }
       }
     });
+  },
+];
+
+//Handle membership on GET
+exports.join_member_get = (req, res, next) => {
+  if (res.locals.currentUser ? false : true) {
+    res.redirect("/log-in");
+  } else {
+    return res.render("join-member", { title: "Become a member", user: res.locals.currentUser });
+  }
+};
+
+//Handle membership on POST
+exports.join_member_post = [
+  // Validate and sanitise fields.
+  body("secret", "Secret word must not be empty.")
+    .trim()
+    .isLength({ min: 1 })
+    .escape()
+    .custom(async (value) => {
+      //Verifies if secret word match with the stored one
+      if (value !== process.env.secretWord) throw new Error("Secret Word does not macht");
+      console.log
+      return true;
+    }),
+  // Process request after validation and sanitization.
+  async (req, res, next) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      console.log(errors.array());
+      // There are errors. Render form again with sanitized values/error messages.
+      res.render("join-member", {
+        title: "Become a Member",
+        errors: errors.array(),
+      });
+    } else {
+      const user = new User(res.locals.currentUser);
+      user.member = true;
+
+      await User.findByIdAndUpdate(res.locals.currentUser._id, user, {}, (err) => {
+        if (err) {
+          return next(err);
+        }
+        return res.redirect("join-member");
+      });
+    }
   },
 ];

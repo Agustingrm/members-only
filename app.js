@@ -51,6 +51,7 @@ passport.use(
 );
 
 passport.serializeUser(function (user, done) {
+  console.log("user is   " + user);
   done(null, user.id);
 });
 
@@ -61,10 +62,26 @@ passport.deserializeUser(function (id, done) {
 });
 
 //Passport
-app.use(session({ secret: `butterfly`, resave: false, saveUninitialized: true }));
+app.use(
+  session({
+    secret: `${process.env.secretWord}`,
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      maxAge: 3600000, //1 hour
+    },
+  })
+);
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.urlencoded({ extended: false }));
+
+// Access the user object from anywhere in the app
+app.use((req, res, next) => {
+  res.locals.currentUser = req.user;
+  // console.log(res.locals.currentUser)
+  next();
+});
 
 app.use(logger("dev"));
 app.use(express.json());
