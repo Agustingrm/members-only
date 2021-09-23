@@ -4,6 +4,7 @@ var router = express.Router();
 // Require controller modules.
 var user_controller = require("../controllers/userController");
 var auth_controller = require("../controllers/authController");
+var message_controller = require("../controllers/messageController");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
@@ -23,4 +24,11 @@ router.get("/log-out", auth_controller.user_logout_get);
 router.get("/join-member", user_controller.join_member_get);
 router.post("/join-member", user_controller.join_member_post);
 
+//BECOME AN ADMIN
+router.get("/become-admin", user_controller.become_admin_get);
+router.post("/become-admin", user_controller.become_admin_post);
+
+//WRITE MESSAGE
+router.get("/write-message", message_controller.message_create_get);
+router.post("/write-message", message_controller.message_create_post);
 module.exports = router;

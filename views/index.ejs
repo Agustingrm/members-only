@@ -9,7 +9,12 @@
     <h1><%= title %></h1>
     <% if (user) {%>
     <h1>WELCOME BACK <%= user.username %></h1>
-    <% } %>
+
+    <% if (user.member) {%>
+    <h1>You are a member of this club</h1>
+    <% } %> <% if (user.admin) {%>
+    <h1>You are an admin of this club</h1>
+    <% }} %>
     <p>Welcome to <%= title %></p>
     <% if (!user) {%>
     <p><a href="/log-in">Log In</a></p>
@@ -17,6 +22,8 @@
     <% } else if (user) {%>
     <p><a href="/log-out">Log Out</a></p>
     <p><a href="/join-member">Become a member</a></p>
+    <p><a href="/become-admin">Become an admin</a></p>
+    <p><a href="/write-message">Write message</a></p>
     <% } %>
   </body>
 </html>
