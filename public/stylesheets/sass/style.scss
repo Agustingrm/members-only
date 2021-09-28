@@ -8,6 +8,10 @@ body {
   background-color: #b9b9b9;
 }
 
+a {
+  color: black;
+}
+
 .personalBadge {
   background-color: rgb(255, 145, 0);
   width: 350px;
@@ -74,6 +78,7 @@ input[type="submit"] {
   background-color: white;
   text-decoration: none;
   font-weight: 700;
+  margin-bottom: 50px;
 }
 
 .writeMessage:visited {
