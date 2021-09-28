@@ -15,8 +15,8 @@ a {
 .personalBadge {
   background-color: rgb(255, 145, 0);
   width: 350px;
-  font-size: 20px;
-  padding: 10px;
+  font-size: 16px;
+  padding: 5px;
   margin: 10px auto;
   border-radius: 10px;
   text-align: center;
@@ -25,15 +25,16 @@ a {
 .becomeMember {
   color: rgb(189, 0, 0);
   font-weight: 700;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .messageContainer {
   padding: 10px 20px;
   margin: 20px auto;
-  width: 95%;
+  width: 80%;
   background-color: white;
   border-radius: 10px;
+  font-size: 13px;
   h3 {
     margin: 5px 0;
   }
@@ -52,7 +53,7 @@ a {
 
 input[type="submit"] {
   padding: 10px;
-  font-size: 16px;
+  font-size: 14px;
   border: none;
   border-radius: 5px;
 }
@@ -72,7 +73,7 @@ input[type="submit"] {
   width: 150px;
   text-align: center;
   padding: 10px;
-  font-size: 16px;
+  font-size: 14px;
   border: none;
   border-radius: 5px;
   background-color: white;

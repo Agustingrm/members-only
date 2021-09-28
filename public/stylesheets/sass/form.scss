@@ -1,5 +1,5 @@
 .forms {
-  width: 800px;
+  width: 600px;
   margin: 50px auto;
   flex-direction: column;
   align-items: center;
@@ -9,22 +9,21 @@
   box-shadow: 6px 2px 5px #4a4a4a;
   label {
     color: rgb(20, 20, 20);
-    font-size: 20px;
-    margin-bottom: 2px;
+    font-size: 14px;
     font-weight: 700;
   }
   input {
     width: 100%;
     box-sizing: border-box;
-    font-size: 20px;
-    padding: 5px;
-    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 2px;
+    margin: 4px 0 10px;
     border-radius: 5px;
   }
   textarea {
     width: 100%;
     box-sizing: border-box;
-    font-size: 20px;
+    font-size: 16px;
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 5px;
@@ -35,11 +34,11 @@
     display: block;
     margin: auto;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 700;
   }
 }
 
 input:-webkit-autofill::first-line {
-  font-size: 20px;
+  font-size: 16px;
 }

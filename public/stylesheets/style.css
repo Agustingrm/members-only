@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@400;700&display=swap");
 .forms {
-  width: 800px;
+  width: 600px;
   margin: 50px auto;
   flex-direction: column;
   align-items: center;
@@ -11,22 +11,21 @@
 }
 .forms label {
   color: #141414;
-  font-size: 20px;
-  margin-bottom: 2px;
+  font-size: 14px;
   font-weight: 700;
 }
 .forms input {
   width: 100%;
   box-sizing: border-box;
-  font-size: 20px;
-  padding: 5px;
-  margin-bottom: 10px;
+  font-size: 16px;
+  padding: 2px;
+  margin: 4px 0 10px;
   border-radius: 5px;
 }
 .forms textarea {
   width: 100%;
   box-sizing: border-box;
-  font-size: 20px;
+  font-size: 16px;
   padding: 5px;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -37,12 +36,12 @@
   display: block;
   margin: auto;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
 }
 
 input:-webkit-autofill::first-line {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 header {
@@ -56,7 +55,7 @@ header {
 header h1 {
   font-family: "Lobster", cursive;
   margin: 10px;
-  font-size: 40px;
+  font-size: 30px;
   color: #fff;
 }
 header a {
@@ -74,7 +73,7 @@ header ul {
 header ul a {
   color: #fafafa;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 16px;
   margin-right: 20px;
 }
 header ul a:visited {
@@ -94,8 +93,8 @@ a {
 .personalBadge {
   background-color: #ff9100;
   width: 350px;
-  font-size: 20px;
-  padding: 10px;
+  font-size: 16px;
+  padding: 5px;
   margin: 10px auto;
   border-radius: 10px;
   text-align: center;
@@ -104,15 +103,16 @@ a {
 .becomeMember {
   color: #bd0000;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .messageContainer {
   padding: 10px 20px;
   margin: 20px auto;
-  width: 95%;
+  width: 80%;
   background-color: white;
   border-radius: 10px;
+  font-size: 13px;
 }
 .messageContainer h3 {
   margin: 5px 0;
@@ -131,7 +131,7 @@ a {
 
 input[type=submit] {
   padding: 10px;
-  font-size: 16px;
+  font-size: 14px;
   border: none;
   border-radius: 5px;
 }
@@ -151,7 +151,7 @@ input[type=submit] {
   width: 150px;
   text-align: center;
   padding: 10px;
-  font-size: 16px;
+  font-size: 14px;
   border: none;
   border-radius: 5px;
   background-color: white;
