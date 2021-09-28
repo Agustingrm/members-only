@@ -6,14 +6,13 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1>Log In</h1>
-    <form action="" method="POST" class="signUp">
+    <%- include('partials/header'); %> 
+    <form action="" method="POST" class="forms">
       <label for="username">Username</label>
       <input name="username" type="text" />
       <label for="password">Password</label>
       <input name="password" type="password" />
       <input type="submit" value="Submit" />
     </form>
-    <a href="/">Back to home</a>
   </body>
 </html>

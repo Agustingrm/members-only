@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1>Sign Up</h1>
-    <form action="" method="POST" class="signUp">
+    <%- include('partials/header'); %> 
+    <form action="" method="POST" class="forms">
       <label for="firstName">First Name</label>
       <input name="firstName" type="text" />
       <label for="lastName">Last Name</label>
@@ -25,6 +25,5 @@
     <% if(errors){ %>
     <p><%= errors[0].msg %></p>
     <% } %>
-    <a href="/">Back to home</a>
   </body>
 </html>

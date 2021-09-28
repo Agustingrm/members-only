@@ -5,7 +5,7 @@ require("dotenv").config();
 
 // Handle User create on GET.
 exports.user_create_get = (req, res, next) => {
-  res.render("sign-up", { title: "Sign Up", errors: "" });
+  res.render("sign-up", { title: "Sign Up", errors: "", user: "" });
 };
 
 // Handle User create on POST.
@@ -98,6 +98,7 @@ exports.join_member_post = [
       res.render("join-member", {
         title: "Become a Member",
         errors: errors.array(),
+        user: "",
       });
     } else {
       const user = new User(res.locals.currentUser);
@@ -143,6 +144,7 @@ exports.become_admin_post = [
       res.render("become-admin", {
         title: "Become an admin",
         errors: errors.array(),
+        user: "",
       });
     } else {
       const user = new User(res.locals.currentUser);

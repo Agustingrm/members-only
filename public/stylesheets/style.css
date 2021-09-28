@@ -1,6 +1,136 @@
-.signUp {
-  display: flex;
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@400;700&display=swap");
+.forms {
+  width: 800px;
+  margin: 50px auto;
   flex-direction: column;
+  align-items: center;
+  background-color: #ff9100;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 6px 2px 5px #4a4a4a;
+}
+.forms label {
+  color: #141414;
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+.forms input {
+  width: 780px;
+  font-size: 20px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+input:-webkit-autofill::first-line {
+  font-size: 20px;
+}
+
+header {
+  display: flex;
+  padding: 0 10px;
+  background-color: #1b1b1b;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+header h1 {
+  font-family: "Lobster", cursive;
+  margin: 10px;
+  font-size: 40px;
+  color: #fff;
+}
+header a {
+  text-decoration: none;
+}
+header a:visited {
+  color: white;
+}
+header ul {
+  list-style-type: none;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+header ul a {
+  color: #fafafa;
+  text-decoration: none;
+  font-size: 20px;
+  margin-right: 20px;
+}
+header ul a:visited {
+  color: #fafafa;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background-color: #b9b9b9;
+}
+
+.personalBadge {
+  background-color: #ff9100;
+  width: 350px;
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.messageContainer {
+  padding: 10px 20px;
+  margin: 20px auto;
+  width: 95%;
+  background-color: white;
+  border-radius: 10px;
+}
+.messageContainer h3 {
+  margin: 5px 0;
+}
+.messageContainer p {
+  margin: 5px 0;
+}
+
+.messageTop {
+  display: flex;
+  justify-content: space-between;
+}
+.messageTop p {
+  margin: 5px 0;
+}
+
+input[type=submit] {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+}
+
+.deleteButton {
+  background-color: red;
+  color: white;
+  font-weight: 700;
+  position: relative;
+  left: calc(100% - 70px);
+}
+
+.writeMessage {
+  display: block;
+  margin: auto;
+  width: 150px;
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.writeMessage:visited {
+  color: black;
 }
 
 /*# sourceMappingURL=style.css.map */

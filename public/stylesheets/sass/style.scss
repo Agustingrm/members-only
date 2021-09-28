@@ -1,1 +1,74 @@
-@import 'sign-up'
+@import "sign-up";
+@import "header";
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@400;700&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background-color: #b9b9b9;
+}
+
+.personalBadge {
+  background-color: rgb(255, 145, 0);
+  width: 350px;
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.messageContainer {
+  padding: 10px 20px;
+  margin: 20px auto;
+  width: 95%;
+  background-color: white;
+  border-radius: 10px;
+  h3 {
+    margin: 5px 0;
+  }
+  p {
+    margin: 5px 0;
+  }
+}
+
+.messageTop {
+  display: flex;
+  justify-content: space-between;
+  p {
+    margin: 5px 0;
+  }
+}
+
+input[type="submit"] {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+}
+
+.deleteButton {
+  background-color: red;
+  color: white;
+  font-weight: 700;
+  position: relative;
+  left: calc(100% - 70px);
+}
+
+.writeMessage {
+  display: block;
+  margin: auto;
+  width: 150px;
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.writeMessage:visited {
+    color: black;
+}
