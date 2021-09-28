@@ -7,9 +7,7 @@ var auth_controller = require("../controllers/authController");
 var message_controller = require("../controllers/messageController");
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("index", { title: "Members Only", user: req.user });
-});
+router.get("/", message_controller.message_list);
 
 //SIGN UP
 router.get("/sign-up", user_controller.user_create_get);
@@ -31,4 +29,8 @@ router.post("/become-admin", user_controller.become_admin_post);
 //WRITE MESSAGE
 router.get("/write-message", message_controller.message_create_get);
 router.post("/write-message", message_controller.message_create_post);
+
+//DELETE MESSAGE
+router.post("/", message_controller.message_delete_post);
+
 module.exports = router;

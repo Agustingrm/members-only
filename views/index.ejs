@@ -21,9 +21,31 @@
     <p><a href="/sign-up">Sign Up</a></p>
     <% } else if (user) {%>
     <p><a href="/log-out">Log Out</a></p>
+    <% if (!user.member) {%>
     <p><a href="/join-member">Become a member</a></p>
+    <% } if (!user.admin) {%>
     <p><a href="/become-admin">Become an admin</a></p>
+    <% } if (user.member) {%>
     <p><a href="/write-message">Write message</a></p>
+    <% }} for(let message of message_list) {%>
+    <div>
+      <div>
+        <% if (!user) {%>
+        <p>Become a member to see author and date</p>
+        <% } else if (user.member) { %>
+        <p><%= message.author.username %></p>
+        <p><%= message.formatedDate %></p>
+        <% } %>
+      </div>
+      <h3><%= message.title %></h3>
+      <p><%= message.message %></p>
+      <% if (user) {%> <% if (user.admin || message.author.username === user.username ) {%>
+      <form action="/" method="POST">
+        <input type="hidden" id="messageId" name="messageId" required="true" value="<%= message._id%>" />
+        <input type="submit" value="Delete" />
+      </form>
+      <% }} %>
+    </div>
     <% } %>
   </body>
 </html>

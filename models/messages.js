@@ -10,8 +10,9 @@ var MessageSchema = new Schema({
   message: { type: String, required: true },
 });
 
-MessageSchema.virtual("date").get(function () {
-  return DateTime.fromJSDate(this.timestamp).toFormat("dd-MM-yyyy, HH:mm");
+//Takes the date in the db and gives it an appropriate format
+MessageSchema.virtual('formatedDate').get(function () {
+  return DateTime.fromJSDate(this.time).toFormat("dd/MM/yyyy HH:mm");
 });
 
 //Export model

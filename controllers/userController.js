@@ -30,7 +30,6 @@ exports.user_create_post = [
   (req, res, next) => {
     bcrypt.hash(req.body.password, 10, (err, hashedPassword) => {
       if (err) {
-        console.log(err);
         return;
       } else {
         // Extract the validation errors from a request.
@@ -47,9 +46,7 @@ exports.user_create_post = [
         });
 
         if (!errors.isEmpty()) {
-          console.log(errors.array());
           // There are errors. Render form again with sanitized values/error messages.
-          console.log("asd");
           res.render("sign-up", {
             title: "Create User",
             user: user,
@@ -90,7 +87,6 @@ exports.join_member_post = [
     .custom(async (value) => {
       //Verifies if secret word match with the stored one
       if (value !== process.env.secretWord) throw new Error("Secret Word does not macht");
-      console.log
       return true;
     }),
   // Process request after validation and sanitization.
@@ -98,7 +94,6 @@ exports.join_member_post = [
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      console.log(errors.array());
       // There are errors. Render form again with sanitized values/error messages.
       res.render("join-member", {
         title: "Become a Member",
@@ -137,7 +132,6 @@ exports.become_admin_post = [
     .custom(async (value) => {
       //Verifies if secret word match with the stored one
       if (value !== process.env.becomeAdmin) throw new Error("Secret Word does not macht");
-      console.log('a')
       return true;
     }),
   // Process request after validation and sanitization.
@@ -145,7 +139,6 @@ exports.become_admin_post = [
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      console.log(errors.array());
       // There are errors. Render form again with sanitized values/error messages.
       res.render("become-admin", {
         title: "Become an admin",
