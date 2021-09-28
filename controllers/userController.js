@@ -98,7 +98,7 @@ exports.join_member_post = [
       res.render("join-member", {
         title: "Become a Member",
         errors: errors.array(),
-        user: "",
+        user: req.user,
       });
     } else {
       const user = new User(res.locals.currentUser);
@@ -144,7 +144,7 @@ exports.become_admin_post = [
       res.render("become-admin", {
         title: "Become an admin",
         errors: errors.array(),
-        user: "",
+        user: req.user,
       });
     } else {
       const user = new User(res.locals.currentUser);

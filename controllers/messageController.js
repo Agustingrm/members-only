@@ -3,7 +3,7 @@ const { body, validationResult } = require("express-validator");
 
 // Handle Message create on GET.
 exports.message_create_get = (req, res, next) => {
-  res.render("write-message", { title: "New Message", errors: "", user: "" });
+  res.render("write-message", { title: "New Message", errors: "", user: req.user });
 };
 
 // Handle Message create on POST.
@@ -29,6 +29,7 @@ exports.message_create_post = [
       // There are errors. Render form again with sanitized values/error messages.
       res.render("write-message", {
         title: "Write Message",
+        user: req.user,
         message: message,
         errors: errors.array(),
       });
