@@ -1,5 +1,5 @@
 .forms {
-  width: 800px ;
+  width: 800px;
   margin: 50px auto;
   flex-direction: column;
   align-items: center;
@@ -11,13 +11,31 @@
     color: rgb(20, 20, 20);
     font-size: 20px;
     margin-bottom: 2px;
+    font-weight: 700;
   }
   input {
-    width: 780px;
+    width: 100%;
+    box-sizing: border-box;
     font-size: 20px;
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 5px;
+  }
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 20px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  .submitForms {
+    width: 100%;
+    display: block;
+    margin: auto;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
   }
 }
 

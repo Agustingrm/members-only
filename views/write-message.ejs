@@ -6,15 +6,14 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <%- include('partials/header'); %> 
-    <h1>Write Message</h1>
+    <%- include('partials/header'); %>
     <label for="title"></label>
-    <form action="" method="POST">
+    <form action="" method="POST" class="forms">
       <label for="title">Title:</label>
       <input type="text" name="title" />
       <label for="messageContent">Message</label>
-      <input type="text" name="messageContent" />
-      <input type="submit" value="submit" />
+      <textarea type="text" name="messageContent" rows='8'></textarea>
+      <input type="submit" value="Submit" class="submitForms" />
     </form>
   </body>
 </html>

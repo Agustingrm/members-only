@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <%- include('partials/header'); %> 
+    <%- include('partials/header'); %>
     <form action="" method="POST" class="forms">
       <label for="firstName">First Name</label>
       <input name="firstName" type="text" />
@@ -20,10 +20,10 @@
       <input name="password" type="password" />
       <label for="passwordConfirmation">Repeat Password</label>
       <input name="passwordConfirmation" type="password" />
+      <% if(errors){ %>
+      <p class="errors"><%= errors[0].msg %></p>
+      <% } %>
       <input type="submit" value="Submit" />
     </form>
-    <% if(errors){ %>
-    <p><%= errors[0].msg %></p>
-    <% } %>
   </body>
 </html>

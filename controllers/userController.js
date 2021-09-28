@@ -73,7 +73,7 @@ exports.join_member_get = (req, res, next) => {
   if (res.locals.currentUser ? false : true) {
     res.redirect("/log-in");
   } else {
-    return res.render("join-member", { title: "Become a member", user: res.locals.currentUser });
+    return res.render("join-member", { title: "Become a member", user: res.locals.currentUser, errors: "" });
   }
 };
 
@@ -119,7 +119,7 @@ exports.become_admin_get = (req, res, next) => {
   if (res.locals.currentUser ? false : true) {
     res.redirect("/log-in");
   } else {
-    return res.render("become-admin", { title: "Become an admin", user: res.locals.currentUser });
+    return res.render("become-admin", { title: "Become an admin", user: res.locals.currentUser, errors: "" });
   }
 };
 

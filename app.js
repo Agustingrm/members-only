@@ -3,11 +3,15 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+var favicon = require("serve-favicon");
 const session = require("express-session");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require("bcryptjs");
 const User = require("./models/users");
+var compression = require('compression');
+var helmet = require('helmet');
+
 require("dotenv").config();
 
 //Import Routes
@@ -15,6 +19,9 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
 var app = express();
+
+app.use(compression()); //Compress all routes
+app.use(helmet());
 
 //Set up mongoose connection
 var mongoose = require("mongoose");
@@ -27,7 +34,7 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-console.log(Date.now())
+console.log(Date.now());
 
 //Passport to compare passwords
 passport.use(
@@ -90,6 +97,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
+//Change Favicon
+app.use(favicon(__dirname + "/public/images/favicon.ico"));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);

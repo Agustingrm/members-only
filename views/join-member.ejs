@@ -6,12 +6,14 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <%- include('partials/header'); %> 
-    <h1>Become a member</h1>
+    <%- include('partials/header'); %>
     <form action="" method="POST" class="forms">
       <label for="secret">Enter the secret code to become a member</label>
       <input name="secret" type="text" />
-      <input type="submit" value="Submit" />
+      <% if(errors){ %>
+      <p class="errors"><%= errors[0].msg %></p>
+      <% } %>
+      <input type="submit" value="Submit" class="submitForms" />
     </form>
   </body>
 </html>

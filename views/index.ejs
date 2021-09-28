@@ -18,8 +18,8 @@
     <% for(let message of message_list) {%>
     <div class="messageContainer">
       <div class="messageTop">
-        <% if (!user) {%>
-        <p>Become a member to see author and date</p>
+        <% if (!user || !user.member) {%>
+        <p class="becomeMember">Become a member to see author and date</p>
         <% } else if (user.member) { %>
         <p><strong>Writen by: </strong><%= message.author.username %></p>
         <p><%= message.formatedDate %></p>

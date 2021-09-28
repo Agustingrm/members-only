@@ -13,13 +13,31 @@
   color: #141414;
   font-size: 20px;
   margin-bottom: 2px;
+  font-weight: 700;
 }
 .forms input {
-  width: 780px;
+  width: 100%;
+  box-sizing: border-box;
   font-size: 20px;
   padding: 5px;
   margin-bottom: 10px;
   border-radius: 5px;
+}
+.forms textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 20px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.forms .submitForms {
+  width: 100%;
+  display: block;
+  margin: auto;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 input:-webkit-autofill::first-line {
@@ -78,6 +96,12 @@ body {
   text-align: center;
 }
 
+.becomeMember {
+  color: #bd0000;
+  font-weight: 700;
+  font-size: 18px;
+}
+
 .messageContainer {
   padding: 10px 20px;
   margin: 20px auto;
@@ -108,11 +132,12 @@ input[type=submit] {
 }
 
 .deleteButton {
-  background-color: red;
+  background-color: #da0000;
   color: white;
   font-weight: 700;
   position: relative;
   left: calc(100% - 70px);
+  cursor: pointer;
 }
 
 .writeMessage {
@@ -131,6 +156,13 @@ input[type=submit] {
 
 .writeMessage:visited {
   color: black;
+}
+
+.errors {
+  color: red;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
 }
 
 /*# sourceMappingURL=style.css.map */

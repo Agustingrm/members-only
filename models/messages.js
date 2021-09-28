@@ -12,7 +12,7 @@ var MessageSchema = new Schema({
 
 //Takes the date in the db and gives it an appropriate format
 MessageSchema.virtual('formatedDate').get(function () {
-  return DateTime.fromJSDate(this.time).toFormat("hh:mm dd/MM/yyyy");
+  return DateTime.fromJSDate(this.time).toFormat("HH:mm dd/MM/yyyy");
 });
 
 //Export model

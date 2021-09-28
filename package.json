@@ -1,6 +1,9 @@
 {
   "name": "members-only",
   "version": "0.0.0",
+  "engines": {
+    "node": "14.17.3"
+  },
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -8,6 +11,7 @@
   "dependencies": {
     "async": "^3.2.1",
     "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^10.0.0",
@@ -15,11 +19,13 @@
     "express": "~4.16.1",
     "express-session": "^1.17.2",
     "express-validator": "^6.12.1",
+    "helmet": "^4.6.0",
     "http-errors": "~1.6.3",
     "luxon": "^2.0.2",
     "mongoose": "^6.0.7",
     "morgan": "~1.9.1",
     "passport": "^0.4.1",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "serve-favicon": "^2.5.0"
   }
 }

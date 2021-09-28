@@ -2,7 +2,7 @@ var User = require("../models/users");
 const passport = require("passport");
 
 exports.user_login_get = (req, res, next) => {
-  res.render("log-in", { title: "Sign Up", user:'' });
+  res.render("log-in", { title: "Sign Up", user: "", errors: "" });
 };
 
 exports.user_login_post = passport.authenticate("local", {
